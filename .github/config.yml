@@ -1,0 +1,11 @@
+name-template: "$RESOLVED_VERSION"
+tag-template: "$RESOLVED_VERSION"
+template: |
+  ## Changes
+  $CHANGES
+version-resolver:
+  minor:
+    labels:
+      - "enhancement"
+  default: patch
+change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
