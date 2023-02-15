@@ -26,3 +26,4 @@ jobs:
           IMAGE_TAG: ${{ steps.release-drafter.tag_name }}
         run: |
           docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
+          echo "::set-output name=image::$ECR_REPOSITORY:$IMAGE_TAG"
