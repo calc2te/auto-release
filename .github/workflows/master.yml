@@ -23,7 +23,7 @@ jobs:
         id: build-image
         env:
           ECR_REPOSITORY: auto-release
-          IMAGE_TAG: ${{ steps.release-drafter.tag_name }}
+          IMAGE_TAG: ${{ steps.release-drafter.outputs.tag_name }}
         run: |
           docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
           echo "::set-output name=image::$ECR_REPOSITORY:$IMAGE_TAG"
